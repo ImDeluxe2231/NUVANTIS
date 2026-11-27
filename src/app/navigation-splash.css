@@ -1,0 +1,272 @@
+.navigation-splash {
+  --splash-particle-alpha: .72;
+  --splash-glow: #38bdf879;
+  --outline-start: .24;
+  --metal-start: .40;
+  --name-start: .56;
+  --sweep-start: .49;
+  background: radial-gradient(ellipse at 50% 55%, #113a62 0%, #071c33 42%, #031326 78%);
+  animation: splash-exit var(--duration) linear both;
+}
+html:has(.navigation-splash) { overflow: hidden; }
+.splash-navigation { animation-name: splash-route-exit; }
+.splash-field { animation: splash-field calc(var(--formation) * .23) ease-out both; }
+.splash-grid {
+  background-image: linear-gradient(#8bcaef1c 1px, transparent 1px), linear-gradient(90deg, #8bcaef1c 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: radial-gradient(ellipse, #000 10%, transparent 75%);
+  opacity: .52;
+  animation: splash-grid-drift 9s linear infinite;
+}
+.splash-waves {
+  opacity: .65;
+  filter: drop-shadow(0 0 5px #258fde);
+  animation: splash-wave-drift 4s ease-in-out infinite alternate;
+}
+.splash-particle {
+  width: 2px;
+  height: 2px;
+  background: #b0edff;
+  box-shadow: 0 0 6px 2px #159ae5a0;
+  animation: splash-particle-flight 2.45s ease-in-out infinite;
+}
+.splash-orbits {
+  inset: -12% 5% 11%;
+  z-index: -1;
+  animation: splash-orbit-arrival calc(var(--formation) * .22) ease-out calc(var(--formation) * .08) both;
+}
+.splash-orbits i {
+  position: absolute;
+  inset: 12% 8% 19%;
+  border: 1px solid #438cff40;
+  border-top-color: #b0e8ffbd;
+  border-right-color: #38bdf895;
+  border-radius: 50%;
+  box-shadow: 0 -3px 14px -7px #89d7ff;
+  transform: rotate(-19deg) scaleY(.67);
+  animation: splash-orbit-drift 3.6s ease-in-out infinite alternate;
+}
+.splash-orbits i:nth-child(2) { transform: rotate(25deg) scaleY(.56); animation-delay: -.8s; opacity: .52; }
+.splash-orbits i:nth-child(3) { inset: 4% 12% 8%; transform: rotate(-32deg) scaleY(.9); opacity: .32; }
+.splash-platform { animation: splash-orbit-arrival calc(var(--formation) * .2) ease-out calc(var(--formation) * .09) both; }
+.splash-platform i {
+  position: absolute;
+  inset: 5% 0;
+  border: 1px solid #89dcffbb;
+  border-radius: 50%;
+  box-shadow: 0 0 13px #2aaff97e, inset 0 0 8px #38bdf85e;
+}
+.splash-platform i:nth-child(2) { inset: 22% 9%; opacity: .55; }
+.splash-platform i:nth-child(3) { inset: 35% 20%; opacity: .4; }
+.splash-platform b {
+  position: absolute;
+  inset: 21% 19%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #edfbff 0%, #65d6ff 8%, #1eacff70 27%, transparent 68%);
+  filter: drop-shadow(0 0 9px var(--splash-glow));
+  animation: splash-platform-pulse 2s ease-in-out infinite alternate;
+}
+.splash-outline {
+  filter: drop-shadow(0 0 6px #4ec8ff);
+  animation: splash-etch calc(var(--formation) * .17) ease-out calc(var(--formation) * var(--outline-start)) both;
+}
+.splash-metal {
+  filter: drop-shadow(0 0 15px var(--splash-glow));
+  animation: splash-metal-fill calc(var(--formation) * .16) ease-out calc(var(--formation) * var(--metal-start)) both;
+}
+.splash-sweep,
+.splash-name-sweep {
+  filter: brightness(2.1) drop-shadow(0 0 5px #8edaff);
+  animation: splash-sweep calc(var(--formation) * .18) ease-out calc(var(--formation) * var(--sweep-start)) both;
+}
+.splash-glyph {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: splash-glyph-entry calc(var(--formation) * .13) cubic-bezier(.17,.8,.24,1)
+    calc(var(--formation) * (var(--name-start) + var(--glyph-index) * .022)) both;
+}
+.splash-trace {
+  filter: brightness(1.65) drop-shadow(0 0 8px #56d7ff);
+  animation: splash-sweep calc(var(--formation) * .20) linear calc(var(--formation) * var(--outline-start)) both;
+}
+.splash-emblem { animation: splash-emblem-lift calc(var(--formation) * .53) ease-out calc(var(--formation) * .22) both; }
+.splash-name-sweep { animation-delay: calc(var(--formation) * (var(--name-start) + .22)); }
+.splash-tagline { animation: splash-tagline-reveal calc(var(--formation) * .10) ease-out calc(var(--formation) * .67) both; }
+.splash-caption { animation: splash-field calc(var(--formation) * .06) ease-out calc(var(--formation) * .75) both; }
+.splash-progress i {
+  background: linear-gradient(90deg, #1e91c9, #a2ebff);
+  box-shadow: 0 0 12px #74d7ff;
+  animation: splash-progress calc(var(--formation) * .18) ease-out calc(var(--formation) * .75) both;
+}
+.splash-preparing { animation: splash-preparing var(--duration) linear both; }
+.splash-welcome { animation: splash-welcome var(--duration) ease both; }
+@keyframes splash-field { from { opacity: 0; } to { opacity: 1; } }
+@keyframes splash-grid-drift { to { background-position: 58px 58px; } }
+@keyframes splash-wave-drift { from { transform: translateY(4%); } to { transform: translateY(-6%); } }
+@keyframes splash-particle-flight {
+  0%, 100% { opacity: 0; transform: translate(0,0); }
+  35% { opacity: var(--splash-particle-alpha); }
+  90% { transform: translate(var(--particle-x),var(--particle-y)); }
+}
+@keyframes splash-orbit-arrival { from { opacity: 0; scale: .8; } to { opacity: 1; scale: 1; } }
+@keyframes splash-orbit-drift { to { rotate: 14deg; } }
+@keyframes splash-platform-pulse { from { opacity: .55; scale: .88; } to { opacity: 1; scale: 1.08; } }
+@keyframes splash-etch { from { clip-path: polygon(0 0,0 0,0 0); } to { clip-path: polygon(0 0,200% 0,0 200%); } }
+@keyframes splash-metal-fill { from { clip-path: inset(0 0 100% 0); opacity: .3; } to { clip-path: inset(0); opacity: 1; } }
+@keyframes splash-glyph-entry {
+  from { opacity: 0; transform: translateY(27px) scaleY(.55); filter: blur(3px) brightness(1.7); }
+  55% { opacity: 1; }
+  to { opacity: 1; transform: translateY(0) scaleY(1); filter: blur(0) brightness(1); }
+}
+@keyframes splash-emblem-lift {
+  from { transform: translateY(12px) scale(.91); }
+  72% { transform: translateY(-3px) scale(1.025); }
+  to { transform: translateY(0) scale(1); }
+}
+@keyframes splash-sweep {
+  0% { clip-path: polygon(-50% 0,-30% 0,-75% 100%,-95% 100%); opacity: 0; }
+  45% { opacity: .9; }
+  100% { clip-path: polygon(155% 0,170% 0,125% 100%,110% 100%); opacity: 0; }
+}
+@keyframes splash-tagline-reveal { from { clip-path: inset(0 50%); opacity: 0; } to { clip-path: inset(0); opacity: 1; } }
+@keyframes splash-progress { from { scale: .02 1; } to { scale: 1 1; } }
+@keyframes splash-preparing { 0%, 67% { opacity: 1; } 70%, 100% { opacity: 0; } }
+@keyframes splash-welcome { 0%, 68% { opacity: 0; } 72%, 100% { opacity: 1; text-shadow: 0 0 8px #59c5fb; } }
+@keyframes splash-exit { 0%, 95% { opacity: 1; } to { opacity: 0; } }
+@keyframes splash-route-exit { 0% { opacity: 0; } 3%, 95% { opacity: 1; } to { opacity: 0; } }
+
+@media (max-width: 640px), (max-height: 520px) {
+  .splash-particle:nth-of-type(n+18) { display: none; }
+  .splash-waves { filter: none; }
+  .splash-emblem { width: clamp(4.25rem, 25vmin, 9rem); }
+  .splash-caption { margin-top: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .navigation-splash.splash-reduced { animation: splash-reduced-exit var(--duration) linear both !important; }
+  .splash-reduced :is(.splash-orbits, .splash-trace, .splash-sweep, .splash-name-sweep, .splash-caption) { display: none; }
+  .splash-reduced .splash-stage * { animation: none !important; }
+  .splash-reduced .splash-outline {
+    animation: splash-reduced-etch calc(var(--formation) * .64) linear both !important;
+  }
+  .splash-reduced .splash-metal {
+    animation: splash-field calc(var(--formation) * .24) ease-out calc(var(--formation) * .30) both !important;
+  }
+  .splash-reduced .splash-glyph {
+    animation: splash-field calc(var(--formation) * .13) ease-out
+      calc(var(--formation) * (.44 + var(--glyph-index) * .034)) both !important;
+  }
+  .splash-reduced .splash-tagline {
+    animation: splash-field calc(var(--formation) * .10) ease-out calc(var(--formation) * .78) both !important;
+  }
+}
+@keyframes splash-reduced-etch {
+  0% { opacity: 0; }
+  24%, 51% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes splash-reduced-exit { 0%, 88% { opacity: 1; } to { opacity: 0; } }
+
+.splash-orbit-trails { overflow: visible; filter: drop-shadow(0 0 6px #38bdf8); }
+.splash-orbit-trails ellipse {
+  fill: none;
+  stroke: #c2edff;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-dasharray: 8 92;
+  animation: splash-orbital-energy calc(var(--formation) * .74) ease-out calc(var(--formation) * .09) both;
+}
+.splash-orbit-trails ellipse:nth-child(2) { stroke: #55caff; stroke-dasharray: 5 95; animation-direction: reverse; }
+@keyframes splash-orbital-energy {
+  0% { stroke-dashoffset: 118; opacity: 0; }
+  23% { opacity: 1; }
+  67% { opacity: .72; }
+  100% { stroke-dashoffset: 0; opacity: .35; }
+}
+.splash-edge-flare {
+  width: 0;
+  height: 0;
+  color: #d5f4ff;
+  animation: splash-edge-flare calc(var(--formation) * .23) ease-out calc(var(--formation) * (var(--metal-start) + .12)) both;
+}
+.splash-edge-flare::before,
+.splash-edge-flare::after {
+  content: "";
+  position: absolute;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #fff, #80ddffb0 18%, transparent 68%);
+}
+.splash-edge-flare::before { width: 5.5rem; height: .52rem; }
+.splash-edge-flare::after { width: .48rem; height: 3.5rem; }
+@keyframes splash-edge-flare {
+  0% { opacity: 0; scale: .4; }
+  38% { opacity: .82; scale: 1; }
+  100% { opacity: .16; scale: .55; }
+}
+@media (prefers-reduced-motion: reduce) { .splash-reduced .splash-edge-flare { display: none; } }
+
+.navigation-splash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 45% 40% at 50% 55%, #1c76bd75, transparent 78%);
+  animation: splash-ambient-light var(--duration) linear both;
+}
+@keyframes splash-ambient-light {
+  0% { opacity: 0; transform: scale(.84); }
+  10%, 89% { opacity: .6; transform: scale(1); }
+  100% { opacity: .92; transform: scale(1.32); }
+}
+.splash-reduced::before { animation: none; }
+
+.splash-horizon {
+  top: 69%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 13%, #186cb672 33%, #c7f6ff 50%, #186cb672 67%, transparent 87%);
+  box-shadow: 0 0 16px #38bdf878;
+  mask-image: linear-gradient(90deg, transparent, #000 32%, #000 68%, transparent);
+  animation: splash-horizon-light calc(var(--formation) * .23) ease-out both;
+}
+@keyframes splash-horizon-light {
+  from { opacity: 0; transform: scaleX(.18); }
+  43% { opacity: 1; }
+  to { opacity: .65; transform: scaleX(1); }
+}
+
+/* Animated highlights travel over the original brand artwork. */
+.splash-build-lines { overflow: visible; filter: drop-shadow(0 0 6px #39c9ff); }
+.splash-build-lines path,
+.splash-floor-pulse path {
+  fill: none;
+  stroke: #c8f1ff;
+  stroke-linecap: round;
+  stroke-width: 1.6;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.splash-build-lines path {
+  animation: splash-light-draw calc(var(--formation) * .31) ease-out
+    calc(var(--formation) * (var(--outline-start) - .035)) both;
+}
+.splash-build-lines path:nth-child(2) { animation-delay: calc(var(--formation) * (var(--outline-start) + .015)); stroke: #71d5ff; }
+.splash-build-lines path:nth-child(3) { animation-delay: calc(var(--formation) * (var(--outline-start) + .06)); stroke: #8ce5ff; }
+.splash-build-spark {
+  fill: #ecfcff;
+  animation: splash-spark-glow calc(var(--formation) * .24) linear calc(var(--formation) * (var(--outline-start) - .04)) both;
+}
+.splash-floor-pulse path {
+  stroke: #8ee6ff;
+  filter: drop-shadow(0 0 4px #38bdf8);
+  animation: splash-light-draw calc(var(--formation) * .39) ease-out calc(var(--formation) * .07) both;
+}
+@keyframes splash-light-draw {
+  0% { stroke-dashoffset: 1; opacity: 0; }
+  15% { opacity: 1; }
+  63% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: .14; }
+}
+@keyframes splash-spark-glow {
+  0%, 100% { opacity: 0; }
+  14%, 72% { opacity: 1; }
+}

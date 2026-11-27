@@ -1,0 +1,41 @@
+# Cambios de la actualización NUVANTIS
+
+- Nuevo: `COMO-ACTUALIZAR-FIGMA-MAKE.md`
+- Nuevo: `package-lock.json`
+- Actualizado: `package.json`
+- Nuevo: `README.md`
+- Actualizado: `vite.config.ts`
+- Actualizado: `backend/manage.py`
+- Actualizado: `backend/README.md`
+- Actualizado: `public/favicon.svg`
+- Actualizado: `src/App.tsx`
+- Nuevo: `src/brand.css`
+- Actualizado: `src/index.css`
+- Actualizado: `src/main.tsx`
+- Actualizado: `src/vite-env.d.ts`
+- Actualizado: `.figma/make/dev.json`
+- Actualizado: `.figma/make/site.json`
+- Actualizado: `backend/core/admin.py`
+- Actualizado: `backend/core/apps.py`
+- Actualizado: `backend/core/models.py`
+- Actualizado: `backend/core/tests.py`
+- Actualizado: `backend/core/urls.py`
+- Actualizado: `backend/core/views.py`
+- Nuevo: `backend/nuvantis/asgi.py`
+- Nuevo: `backend/nuvantis/settings.py`
+- Nuevo: `backend/nuvantis/urls.py`
+- Nuevo: `backend/nuvantis/wsgi.py`
+- Nuevo: `backend/nuvantis/__init__.py`
+- Actualizado: `backend/core/migrations/0001_initial.py`
+- Nuevo: `public/brand/nuvantis-identidad.png`
+- Actualizado: `src/app/api.ts`
+- Actualizado: `src/app/App.tsx`
+- Nuevo: `src/app/content.ts`
+- Nuevo: `src/app/corporate.tsx`
+- Actualizado: `src/app/pages.tsx`
+- Actualizado: `src/app/routes.tsx`
+- Nuevo: `src/app/shell-corporate.tsx`
+- Actualizado: `src/app/shell.tsx`
+- Actualizado: `src/app/ui.tsx`
+
+El paquete Python de configuración pasó de backend/novantis a backend/nuvantis.

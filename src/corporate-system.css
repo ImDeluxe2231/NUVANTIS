@@ -1,0 +1,44 @@
+@reference "./index.css";
+/* Shared surfaces for corporate pages. */
+.route-main > .section {
+  @apply py-16 sm:py-24;
+}
+.route-main > .section:not(.dark-section):nth-of-type(even) {
+  @apply bg-nuvantis-pale;
+}
+.route-main .section-head h2 {
+  @apply font-editorial text-[clamp(2rem,4vw,3.75rem)] leading-[1.12] font-semibold tracking-tight;
+}
+.route-main .section-head p {
+  @apply max-w-2xl text-base leading-relaxed sm:text-lg;
+}
+.route-main :is(.project-case,.unit-card,.mission-grid article,.values-grid article,.engagement-grid article) {
+  @apply min-w-0 overflow-hidden rounded-2xl border border-nuvantis-graphite/15 bg-white text-nuvantis-navy shadow-sm transition-[transform,box-shadow] duration-300 hover:shadow-xl motion-safe:hover:-translate-y-1;
+}
+.route-main :is(.project-content,.unit-card-copy,.values-grid article,.mission-grid article) {
+  @apply p-5 sm:p-8;
+}
+.route-main :is(.project-content,.unit-card-copy) h3 {
+  @apply font-editorial text-2xl leading-tight font-semibold;
+}
+.route-main :is(.filter-row,.sector-tabs,.corporate-service-tabs) button {
+  @apply min-h-11 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+.route-main :is(input,textarea,select):focus-visible {
+  @apply outline-2 outline-offset-2 outline-nuvantis-blue;
+}
+.route-main > .cta-band {
+  @apply bg-nuvantis-navy py-16 text-white sm:py-24;
+}
+.route-main > .cta-band h2 {
+  @apply font-editorial text-[clamp(2rem,4vw,3.75rem)] leading-tight font-semibold tracking-tight text-white;
+}
+.route-main > .cta-band p {
+  @apply text-nuvantis-silver;
+}
+@media (max-width: 980px) {
+  .corporate-nav.open {
+    @apply max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain;
+  }
+}
+

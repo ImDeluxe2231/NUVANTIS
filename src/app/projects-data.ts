@@ -1,0 +1,10 @@
+import type { IconName } from "./ui";
+
+export const projects = [
+  { id: "gestion-empresarial", title: "Gestión empresarial", type: "Software", icon: "layers" as IconName, challenge: "Procesos, tareas y documentos distribuidos en varias herramientas.", solution: "Plataforma modular para centralizar la operación y dar seguimiento.", features: "Roles · Flujos · Documentos · Reportes", variant: 0 },
+  { id: "panel-indicadores", title: "Panel de indicadores", type: "Datos", icon: "chart" as IconName, challenge: "Reportes manuales sin una visión consolidada de la operación.", solution: "Dashboard con fuentes conectadas, filtros e indicadores priorizados.", features: "Fuentes · Indicadores · Filtros · Alertas", variant: 2 },
+  { id: "flujo-solicitudes", title: "Flujo de solicitudes", type: "Automatización", icon: "automation" as IconName, challenge: "Solicitudes atendidas por mensajes y pasos manuales difíciles de rastrear.", solution: "Flujo digital con validaciones, responsables y notificaciones.", features: "Reglas · Estados · Alertas · Trazabilidad", variant: 1 },
+  { id: "portal-clientes", title: "Portal de clientes", type: "Web", icon: "users" as IconName, challenge: "Consultas y documentos dependen de atención manual.", solution: "Portal responsive para autogestión, consulta y seguimiento.", features: "Acceso · Documentos · Solicitudes · Soporte", variant: 3 },
+  { id: "integracion-operativa", title: "Integración operativa", type: "Datos", icon: "link" as IconName, challenge: "La misma información se registra en sistemas distintos.", solution: "Capa de integración con validaciones y registro de sincronización.", features: "API · Mapeo · Validación · Logs", variant: 2 },
+  { id: "asistente-informacion", title: "Asistente de información", type: "Automatización", icon: "brain" as IconName, challenge: "El equipo invierte tiempo buscando respuestas en documentación interna.", solution: "Asistente supervisado para consultar fuentes aprobadas.", features: "Fuentes · Permisos · Revisión · Historial", variant: 1 },
+];

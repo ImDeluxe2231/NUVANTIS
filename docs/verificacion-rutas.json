@@ -1,0 +1,92 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "title": "Ingeniería que\ntransforma el futuro."
+    },
+    {
+      "route": "/unidades",
+      "title": "Especialidades conectadas.\nIngeniería integral."
+    },
+    {
+      "route": "/servicios",
+      "title": "De la necesidad\na la solución tecnológica."
+    },
+    {
+      "route": "/unidades/software",
+      "title": "NUVANTIS SOFTWARE"
+    },
+    {
+      "route": "/unidades/intelligence",
+      "title": "NUVANTIS INTELLIGENCE"
+    },
+    {
+      "route": "/unidades/analytics",
+      "title": "NUVANTIS ANALYTICS"
+    },
+    {
+      "route": "/unidades/infrastructure",
+      "title": "NUVANTIS INFRASTRUCTURE"
+    },
+    {
+      "route": "/unidades/consulting",
+      "title": "NUVANTIS CONSULTING"
+    },
+    {
+      "route": "/unidades/labs",
+      "title": "NUVANTIS LABS"
+    },
+    {
+      "route": "/sectores",
+      "title": "Tecnología que se adapta a cada contexto"
+    },
+    {
+      "route": "/nosotros",
+      "title": "Ingeniería que\ntransforma el futuro."
+    },
+    {
+      "route": "/proceso",
+      "title": "Un proceso claro para construir con confianza"
+    },
+    {
+      "route": "/proyectos",
+      "title": "Ideas que toman forma antes de construirse"
+    },
+    {
+      "route": "/muro-de-ideas",
+      "title": "¿Qué problema resolverías con tecnología?"
+    },
+    {
+      "route": "/contacto",
+      "title": "Hablemos de tu próximo proyecto"
+    },
+    {
+      "route": "/privacidad",
+      "title": "Privacidad"
+    },
+    {
+      "route": "/terminos",
+      "title": "Términos y condiciones"
+    },
+    {
+      "route": "/soluciones/software-a-medida",
+      "title": "NUVANTIS SOFTWARE"
+    }
+  ],
+  "javascriptErrors": [],
+  "desktop": "1440 × 980",
+  "mobile": "390 × 844",
+  "checks": [
+    "six-unit mega menu",
+    "hero slides",
+    "need selector",
+    "unit search",
+    "service tabs",
+    "sector deep link",
+    "support inquiry",
+    "contact validation",
+    "six corporate values",
+    "mobile overflow",
+    "mobile unit navigation"
+  ]
+}

@@ -1,0 +1,4 @@
+17 vistas nuevas separadas y 8 vistas conceptuales previas.
+Mockups visuales, no implementación funcional.
+Los datos de clientes, métricas y testimonios presentes en la serie anterior no se han verificado: son ficticios y NO deben publicarse.
+Textos legales por definir. Formularios requieren backend funcional.

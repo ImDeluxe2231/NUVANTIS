@@ -1,0 +1,1 @@
+{ "files.associations": { "*.css": "tailwindcss" }, "files.exclude": { "**/__pycache__": true, ".npm-cache": true } }
